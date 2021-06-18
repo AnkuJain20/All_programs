@@ -4,6 +4,7 @@ public class IfOperations {
 
     public static void checkNumberIsNegative(int num){
         if(num<0){
+
             System.out.println(" number is negative");
         }
         else {
