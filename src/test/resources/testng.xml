@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite" parallel="methods">
+    <parameter name="a" value="5"/>
+    <parameter name="b" value="3"/>
+    <!--    <groups>-->
+<!--        <run>-->
+<!--            <include name="sanity"/>-->
+<!--        </run>-->
+<!--    </groups>-->
+    <test name="Test1">
+        <classes>
+<!--            <class name="com.tyv.tests.AuthenticatedApiTests">-->
+<!--                <methods>-->
+
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="com.tyv.tests.HomePageTests">
+                <methods>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
