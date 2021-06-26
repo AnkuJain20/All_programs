@@ -35,7 +35,7 @@ public class HomePageTests extends BaseTestClass {
 //
 //
 ////here we have created java object that will get convert into jason format: Serialization
-////       so we created  this signInRequest class an create variables username and password and created theit getter and setter
+////       so we created  this signInRequest class an create variables username and password and created their getter and setter
 //        SignInRequest signInRequest = new SignInRequest();
 //        signInRequest.setUsername(uname);
 //        signInRequest.setPassword(pwd);

@@ -71,6 +71,11 @@ public class NumberOperations {
         System.out.println("After swapping num2 is : " + num1 + " and num2: " + num2);
 
         //Method 2: Without using 3rd var
+//        X= 25 (First number), Y= 23 (second number)
+//        Swapping Logic:
+//        X = X + Y = 25 +23 = 48
+//        Y = X - Y = 48 - 23 = 25
+//        X = X -Y = 48 - 25 = 23
         num1 = num2+num1 - num1;
         num2 = num1+num2 - num2;
         System.out.println("After swapping using method 2num2 is : " + num1 + " and num2: " + num2);
