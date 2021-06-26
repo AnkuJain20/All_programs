@@ -11,19 +11,23 @@ import org.testng.Assert;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class SeleniumCodeSnippet {
 
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException, InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 //        System.setProperty("webdriver.gecko.driver","src/test/resources/geckodriver.exe");
 
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.spicejet.com/");
-        driver.get("https://www.google.com/");
+//        driver.get("https://www.spicejet.com/");
+//        driver.get("https://www.google.com/");
+
+        playVideoSongs(driver);
+
 
 
         setDriverProperties(driver);
@@ -41,6 +45,24 @@ public class SeleniumCodeSnippet {
         frameReadFromParent(driver);
 
         alertBoxHandling(driver);
+
+    }
+
+    private static void playVideoSongs(WebDriver driver) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        driver.get("https://www.youtube.com/");
+        driver.findElement(By.id("search")).sendKeys("Arijit sing songs");
+        driver.findElement(By.id("search-icon-legacy")).click();
+
+        Thread.sleep(5000);
+
+
+        List<WebElement> elements=driver.findElements(By.xpath("//a[@class= 'yt-simple-endpoint style-scope ytd-video-renderer']"));
+        int size = elements.size();
+        System.out.println(size);
+        elements.get(5).click();
+
+
     }
 
     private static void alertBoxHandling(WebDriver driver) {
