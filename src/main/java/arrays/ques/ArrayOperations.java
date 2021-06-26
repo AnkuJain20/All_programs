@@ -108,6 +108,7 @@ public class ArrayOperations {
         int [] array = {2,5,6,11,1,8,2};
         int length = array.length;
 
+
         System.out.println("Printing array");
         ArrayOperations.printArray(array,length);
 
