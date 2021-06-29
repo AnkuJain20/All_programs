@@ -5,9 +5,13 @@ import com.tyv.base.BaseTestClass;
 import com.tyv.request.pojo.SignInRequest;
 import com.tyv.response.pojo.SignInResponse;
 import com.tyv.utils.Constants;
+import io.restassured.RestAssured;
+import io.restassured.response.ExtractableResponse;
+import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -56,6 +60,23 @@ public class AuthenticatedApiTests extends BaseTestClass {
     public void testStudentByVendorId(){
         System.out.println("Runing test testStudentByVendorId");
         given().header("Authorization",authToken).when().get(Constants.VendorId_PATH).then().statusCode(200);
+    }
+
+
+    @Test
+    public void allDetails(){
+        String baseURL = "http://dummy.com";
+
+        RequestSpecification requestSpecification = RestAssured.given()
+                .baseUri(baseURL).contentType("application/json");
+
+        JSONObject requestObject = new JSONObject();
+        requestObject.put("username", "name1");
+
+         given().spec(requestSpecification).body(requestObject)
+                .when().post(Constants.SIGNIN_API_PATH)
+                .then().statusCode(200).extract().as(String.class);
+
     }
 
 

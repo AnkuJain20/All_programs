@@ -23,12 +23,10 @@ public class SeleniumCodeSnippet {
 //        System.setProperty("webdriver.gecko.driver","src/test/resources/geckodriver.exe");
 
         WebDriver driver = new ChromeDriver();
-//        driver.get("https://www.spicejet.com/");
-//        driver.get("https://www.google.com/");
+
+        scrollByJSExecutor(driver);
 
         playVideoSongs(driver);
-
-
 
         setDriverProperties(driver);
 
@@ -45,6 +43,36 @@ public class SeleniumCodeSnippet {
         frameReadFromParent(driver);
 
         alertBoxHandling(driver);
+        noOfLinks(driver);
+
+
+    }
+    public static  void noOfLinks( WebDriver driver){
+        driver.get("https://www.flipkart.com/");
+        int count =   driver.findElements(By.tagName("a")).size();
+        System.out.println(count);
+    }
+
+    private static void scrollByJSExecutor(WebDriver driver) throws InterruptedException {
+
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        driver.get("http://moneyboats.com/");
+        driver.manage().window().maximize();
+
+        By xpath = By.xpath("//*[@id=\"footer\"]/div/div[2]/section/ul/li[1]/a");
+        WebElement element = driver.findElement(xpath);
+
+//        WebDriverWait wait = new WebDriverWait(driver,20);
+//        wait.until(ExpectedConditions.visibilityOf(driver.findElement(xpath)));
+//
+//        //Vertical scroll down by 600  pixels
+//        js.executeScript("window.scrollBy(0,900);");
+
+        //Wait till element is visible
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+
+        Thread.sleep(500);
+
 
     }
 
@@ -84,6 +112,10 @@ public class SeleniumCodeSnippet {
 
         driver.manage().window().maximize();
         driver.switchTo().frame("a077aa5e"); //switching the frame by ID
+//        ways to handle frames
+//        #1) Using Frame name or id
+//          #2) Using Frame Index
+//          #3) Using Web Element
 
         System.out.println("********We are switch to the iframe*******");
         driver.findElement(By.xpath("html/body/a/img")).click();
