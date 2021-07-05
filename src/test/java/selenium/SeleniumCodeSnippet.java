@@ -24,6 +24,8 @@ public class SeleniumCodeSnippet {
 
         WebDriver driver = new ChromeDriver();
 
+        setScreenSizeUsingDimensions(driver);
+
         scrollByJSExecutor(driver);
 
         playVideoSongs(driver);
@@ -47,6 +49,21 @@ public class SeleniumCodeSnippet {
 
 
     }
+
+    private static void setScreenSizeUsingDimensions(WebDriver driver) {
+        driver.get("https://www.flipkart.com/");
+        Dimension dimension = new Dimension(400, 500);
+        driver.manage().window().setSize(dimension);
+
+        dimension = driver.manage().window().getSize();
+
+        System.out.println("height is "+ dimension.height +" width is "+ dimension.width);
+//            driver.manage().window().fullscreen();
+
+        Point point = driver.manage().window().getPosition();
+        System.out.println("x is "+ point.x +" y is "+ point.y);
+    }
+
     public static  void noOfLinks( WebDriver driver){
         driver.get("https://www.flipkart.com/");
         int count =   driver.findElements(By.tagName("a")).size();
@@ -195,8 +212,6 @@ public class SeleniumCodeSnippet {
         //explicit wait
         WebDriverWait wait = new WebDriverWait(driver,20);
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("testId")));
-
-
 
     }
 
