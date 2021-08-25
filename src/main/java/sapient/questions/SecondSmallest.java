@@ -1,4 +1,4 @@
-package coderpad;
+package sapient.questions;
 
 public class SecondSmallest {
     public static void main(String[] args) {
@@ -9,19 +9,19 @@ public class SecondSmallest {
 
     private static int secondSmallest(int[] arr) {
 
-        int min = Integer.MAX_VALUE;
         int min1 = Integer.MAX_VALUE;
+        int min2 = Integer.MAX_VALUE;
         for (int i = 0; i < arr.length; i++) {
-            int num = arr[i];
-            if (num <= min) {
-                min1 = min;
-                min = num;
+            int currNum = arr[i];
+            if (currNum <= min1) {
+                min2 = min1;
+                min1 = currNum;
             } else {
-                if (num > min && num <= min1) {
-                    min1 = num;
+                if (currNum > min1 && currNum <= min2) {
+                    min2 = currNum;
                 }
             }
         }
-        return min1;
+        return min2;
     }
 }

@@ -1,11 +1,11 @@
-package coderpad;
+package sapient.questions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeFactorization {
     public static void main(String[] args) {
-        int number = 91;
+        int number = 121;
        List<Integer> result =primeFactors( number);
         System.out.println("Prime factors of a " + number + "are" + result);
     }

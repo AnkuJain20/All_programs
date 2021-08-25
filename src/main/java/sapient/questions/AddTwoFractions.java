@@ -1,19 +1,23 @@
-package coderpad;
+package sapient.questions;
 
 public class AddTwoFractions {
 
     public static void main(String[] args) {
-        int [] data1 = {2,5};
-        int [] data2 = {2,7};
 
-        int [] result = addTwoFraction(data1,data2);
+        int [] data11 = {3,8};
+        int [] data12 = {7,8};
+        int [] result2 = addTwoFraction(data11,data12);
 
-        System.out.println("result num: " + result[0] + " deno:" + result[1]);
+        if(result2[0] == 5 && result2[1] == 4){
+            System.out.println("test passed");
+        }
+        /***
+         *
+         */
 
     }
 
     private static int[] addTwoFraction(int[] data1, int[] data2) {
-        int[] result;
         int num = data1[0]*data2[1]+data1[1]*data2[0];
         int deno= data1[1]*data2[1];
         int maxNum = Math.max(num,deno);

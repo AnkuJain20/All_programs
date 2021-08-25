@@ -1,9 +1,9 @@
-package coderpad;
+package sapient.questions;
 
 public class Panagram {
 static  String input = "appleisgood";
     public static void main(String[] args) {
-String missingletter =findMissingLetter("appleisgood");
+        String missingletter =findMissingLetter("appleisgood");
         System.out.println("Missing letters are "+ missingletter);
     }
     public static String findMissingLetter(String input){

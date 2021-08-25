@@ -1,17 +1,18 @@
-package coderpad;
+package sapient.questions;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class FirstNonRepeating {
     public static void main(String[] args) {
-        String input = "bangaloreb";
+        String input = "bbaUkngalore";
         char result = firstNonRepeating(input);
         System.out.println(" First Non repeating is "+ result);
     }
 
     private static char firstNonRepeating(String input) {
         Map<Character, Integer> map = new HashMap<>();
+       input= input.toLowerCase();
         for (int i = 0; i < input.length(); i++) {
             char ch = input.charAt(i);
             if (map.containsKey(ch)) {

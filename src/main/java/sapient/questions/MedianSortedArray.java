@@ -1,11 +1,32 @@
-package coderpad;
+package sapient.questions;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class MedianSortedArray {
     public static void main(String[] args) {
         int[] arr1 = {5, 9, 12, 15};
         int[] arr2 = {7, 11, 15, 17};
-        double medianNumber = medianArray(arr1, arr2);
-        System.out.println("median number is "+ medianNumber);
+
+        List<Integer> resultList = new ArrayList<>();
+        for(int i: arr1){
+            resultList.add(i);
+        }
+        for(int i: arr2){
+            resultList.add(i);
+        }
+
+        Collections.sort(resultList);
+        System.out.println("soreted list");
+        for(int k: resultList){
+            System.out.print( k + " ");
+        }
+
+
+//        double medianNumber = medianArray(arr1, arr2);
+//        System.out.println("median number is "+ medianNumber);
 
     }
 
@@ -13,6 +34,7 @@ public class MedianSortedArray {
         int totalLen = arr1.length + arr2.length;
         int[] mergedArray = new int[totalLen];
         int countera = 0, counterb = 0, counterR = 0;
+
         while (counterR < totalLen) {
             if((countera < arr1.length && counterb<arr2.length)) {
                 if (arr1[countera] < arr2[counterb]) {

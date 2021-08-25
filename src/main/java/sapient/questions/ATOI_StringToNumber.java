@@ -1,11 +1,11 @@
-package coderpad;
+package sapient.questions;
 
 import java.util.SortedMap;
 
 public class ATOI_StringToNumber {
     public static void main(String[] args) {
         String str = "123";
-      int num  =stringToNumber( str);
+        int num  =stringToNumber( str);
         System.out.println(" String to number is "+ num);
     }
 

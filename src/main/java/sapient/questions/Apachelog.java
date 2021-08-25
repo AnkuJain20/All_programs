@@ -1,16 +1,21 @@
-package coderpad;
+package sapient.questions;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Apachelog {
     public static void main(String[] args) {
         String lines[] = new String[]{
                 "10.0.0.1 - log entry 1 11",
+                "10.0.0.2 - log entry 4 213",
+                "10.0.0.2 - log entry 3 213",
                 "10.0.0.1 - log entry 2 213",
-                "10.0.0.2 - log entry 133132"};
+                "10.0.0.2 - log entry 133132",
+                "10.0.0.1 - log entry 2 21311",
+        };
         String result = mostUsedIPAddress(lines);
-        System.out.println("most used IP address is "+ result);
+        System.out.println("most used IP address is :"+ result);
     }
 
     private static String mostUsedIPAddress(String[] lines) {
@@ -29,10 +34,12 @@ public class Apachelog {
             }
         }
 
-        for (String ip : map.keySet()) {
-       int maxCount    = map.get(ip);
-            if (count < maxCount) {
-                count = maxCount;
+        Set<String> keys = map.keySet();
+
+        for (String ip : keys) {
+            int occurence    = map.get(ip);
+            if (count < occurence) {
+                count = occurence;
                 maxIP = ip;
             }
         }

@@ -1,11 +1,11 @@
-package coderpad;
+package sapient.questions;
 
 import java.util.*;
 
 public class GroupAnagram {
     public static void main(String[] args) {
-        String input= "cat good dog tac doog sat tas god dog";
-      setOfAnagrams( input);
+        String input= "cat good dog act doog sat tas god dog";
+         setOfAnagrams( input);
     }
 
     private static void setOfAnagrams(String input) {
@@ -13,9 +13,7 @@ public class GroupAnagram {
         Map<String, ArrayList<String>> map = new HashMap<>();
     String [] words = input.split(" ");
     for(String word : words){
-     char[] ch =(word.toCharArray());
-       Arrays.sort(ch);
-       String wsorted = new String( ch);
+        String wsorted = getSortedWord(word);
 //        System.out.println("sorted word" + wsorted);
       if(map.containsKey(wsorted)){
            map.get(wsorted).add(word);
@@ -38,5 +36,12 @@ public class GroupAnagram {
 
 
     }
+
+    private static String getSortedWord(String word) {
+        char[] ch =(word.toCharArray());
+        Arrays.sort(ch);
+        String wsorted = new String( ch);
+        return wsorted;
     }
+}
 

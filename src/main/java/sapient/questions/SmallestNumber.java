@@ -1,4 +1,4 @@
-package coderpad;
+package sapient.questions;
 
 public class SmallestNumber {
     public static void main(String[] args) {

@@ -1,8 +1,8 @@
-package coderpad;
+package sapient.questions;
 
 public class IspowerOf10 {
     public static void main(String[] args) {
-        int number = 100000;
+        int number = 0;
 
        boolean result = isPowerOf10(number);
         System.out.println(result);
@@ -10,7 +10,7 @@ public class IspowerOf10 {
 
     private static boolean isPowerOf10(int number) {
         int counter=0;
-        if(number==1){
+        if(number<=1){
             return false;
         }
         while(number !=1){

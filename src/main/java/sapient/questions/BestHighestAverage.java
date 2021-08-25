@@ -1,4 +1,4 @@
-package coderpad;
+package sapient.questions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +15,8 @@ public class BestHighestAverage {
         String name = "";
         int marks = 0;
         Map<String, List<Integer>> map = new HashMap<>();
-Double Highestaverage = 0.0;
+        Double Highestaverage = 0.0;
+
         for (int i = 0; i < s1.length; i++) {
             name = s1[i][0];
             marks = Integer.parseInt(s1[i][1]);
@@ -31,7 +32,7 @@ Double Highestaverage = 0.0;
 
         for(String key : map.keySet()){
             List<Integer>marks1 = map.get(key);
-          Double average =  getAverage(marks1);
+             Double average =  getAverage(marks1);
             if (Highestaverage < average) {
 
                 Highestaverage= average;
@@ -45,7 +46,7 @@ Double Highestaverage = 0.0;
             sum = sum + marks.get(i);
         }
         Double average = (double) (sum / marks.size());
-return average ;
+        return average ;
 
     }
 }
