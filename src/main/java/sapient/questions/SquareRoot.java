@@ -6,7 +6,7 @@ public class SquareRoot {
         int squareRootOfInteger = squareRoot(num);
         System.out.println(squareRootOfInteger);
     }
-
+// number should be greater than 0.
     private static int squareRoot(int num) {
         int ans =1;
         while(ans*ans<num){

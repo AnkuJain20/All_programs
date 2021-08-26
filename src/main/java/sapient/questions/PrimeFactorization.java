@@ -9,6 +9,7 @@ public class PrimeFactorization {
        List<Integer> result =primeFactors( number);
         System.out.println("Prime factors of a " + number + "are" + result);
     }
+   // number should be gretaer than zero and must be integer.
 
     private static List<Integer> primeFactors(int number) {
 

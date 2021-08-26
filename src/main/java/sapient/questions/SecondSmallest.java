@@ -6,6 +6,7 @@ public class SecondSmallest {
         int secondSmallest = secondSmallest(arr);
         System.out.println("second smallest number is "+ secondSmallest);
     }
+    //size of array should be atleast 2.
 
     private static int secondSmallest(int[] arr) {
 

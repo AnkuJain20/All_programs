@@ -7,6 +7,7 @@ public class Power {
       int answer =checkPower(base, exponent);
       System.out.println(answer);
     }
+    //number should be 0 0r gretaer than zero and must be integer.
 
     private static int checkPower(int base, int exponent) {
         int ans = 1;

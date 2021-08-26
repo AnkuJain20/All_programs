@@ -9,6 +9,7 @@ public class SubArrayExceedsSum {
        int countOfElements = subArrayExceedsSum( arr, threshhold);
         System.out.println("count of subarray is: "+ countOfElements);
     }
+    // if threshold is greater than all the elements, thaen ans is -1.
 
     private static int subArrayExceedsSum(int[] arr, int threshhold) {
         int sum=0;

@@ -16,6 +16,7 @@ public class Apachelog {
         };
         String result = mostUsedIPAddress(lines);
         System.out.println("most used IP address is :"+ result);
+        // we wre dividing the input on the basis of space
     }
 
     private static String mostUsedIPAddress(String[] lines) {

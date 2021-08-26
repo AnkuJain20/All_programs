@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class FirstNonRepeating {
     public static void main(String[] args) {
-        String input = "bbaUkngalore";
+        String input = "BbaUkngalore";
         char result = firstNonRepeating(input);
         System.out.println(" First Non repeating is "+ result);
     }

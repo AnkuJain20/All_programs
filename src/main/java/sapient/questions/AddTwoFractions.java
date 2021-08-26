@@ -12,7 +12,7 @@ public class AddTwoFractions {
             System.out.println("test passed");
         }
         /***
-         *
+         * 0 for denom, integer array perfect size 2; if only 1 element is therewill assume dnom is 1
          */
 
     }

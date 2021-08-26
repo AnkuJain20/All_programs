@@ -6,7 +6,7 @@ public class SmallestNumber {
     int minNum   =  smallestNumber( arr);
         System.out.println("smallest number is "+ minNum);
     }
-
+    //size of array should be atleast 1.
     private static int smallestNumber(int[] arr) {
         int min= arr[0];
         for(int i=0;i< arr.length;i++){

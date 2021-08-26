@@ -7,6 +7,7 @@ public class GroupAnagram {
         String input= "cat good dog act doog sat tas god dog";
          setOfAnagrams( input);
     }
+    //words should be split on the basis of space.
 
     private static void setOfAnagrams(String input) {
 
