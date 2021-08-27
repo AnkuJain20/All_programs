@@ -3,7 +3,7 @@ package sapient.questions;
 
 public class LongestUniformString {
     public static void main(String[] args) {
-         String input= "aabbbbcc";
+         String input= "aabbbbccc";
          int maxlength= 0;
          int maxIndex=0;
          uniformString(input,maxlength, maxIndex);
