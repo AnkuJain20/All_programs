@@ -144,7 +144,6 @@ public class NumberOperations {
     private static void reverseNumber(int number) {
 
         int remainder,reverseNumber=0;
-
         while(number!=0){
             remainder = number%10;
             reverseNumber = reverseNumber*10 + remainder ;

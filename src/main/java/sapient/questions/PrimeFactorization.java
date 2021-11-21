@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PrimeFactorization {
     public static void main(String[] args) {
-        int number = 121;
+        int number = 6;
        List<Integer> result =primeFactors( number);
         System.out.println("Prime factors of a " + number + "are" + result);
     }

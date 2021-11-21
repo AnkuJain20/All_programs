@@ -1,0 +1,93 @@
+------------
+SELECT EMP_ID, [DISTINCT] NAME...
+FROM EMPLOYEE_TBL
+WHERE LAST_NAME = 'Jain';
+[ORDER BY EMP_ID desc/asc]
+[LIMIT 3;]
+[GROUP BY column1]
+
+
+
+-----
+
+UPDATE table_name
+SET column1 = value1, column2 = value2...., columnN = valueN
+WHERE [condition];
+
+---------
+
+DELETE FROM table_name
+WHERE [condition];
+
+---------
+The HAVING clause must follow the GROUP BY clause in a query and must also precede the ORDER BY clause if used.
+The following code block has the syntax of the SELECT statement including the HAVING clause −
+
+SELECT column1, column2
+FROM table1, table2
+WHERE [ conditions ]
+GROUP BY column1, column2
+HAVING [ conditions ]
+ORDER BY column1, column2
+
+SELECT ID, NAME, AGE, ADDRESS, SALARY
+FROM CUSTOMERS
+GROUP BY age
+HAVING COUNT(age) >= 2;
+
+-------------
+
+select records with a price lesser than 70 from the Orders table, will group records with a similar price, will sort the output by price,
+and will also add the column COUNT(price) that will display how many records with similar price were found:
+
+
+SELECT COUNT(price), price FROM orders
+WHERE price < 70 GROUP BY price ORDER BY price
+
+---------
+
+Constraints -->
+NOT NULL Constraint − Ensures that a column cannot have NULL value.
+DEFAULT Constraint − Provides a default value for a column when none is specified.
+UNIQUE Constraint − Ensures that all values in a column are different.
+PRIMARY Key − Uniquely identifies each row/record in a database table.
+FOREIGN Key − Uniquely identifies a row/record in any of the given database table.
+CHECK Constraint − The CHECK constraint ensures that all the values in a column satisfies certain conditions.
+INDEX − Used to create and retrieve data from the database very quickly.
+
+------
+Joins -->
+INNER JOIN − returns rows when there is a match in both tables.
+LEFT JOIN − returns all rows from the left table, even if there are no matches in the right table.
+RIGHT JOIN − returns all rows from the right table, even if there are no matches in the left table.
+FULL JOIN − returns rows when there is a match in one of the tables.
+
+------
+SELECT  ID, NAME, AMOUNT, DATE
+   FROM CUSTOMERS
+   INNER JOIN ORDERS
+   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+
+SELECT  ID, NAME, AMOUNT, DATE
+   FROM CUSTOMERS
+   LEFT JOIN ORDERS
+   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+
+
+   SQL> SELECT  ID, NAME, AMOUNT, DATE
+      FROM CUSTOMERS
+      RIGHT JOIN ORDERS
+      ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+
+SELECT table1.column1, table2.column2...
+FROM table1
+LEFT JOIN table2
+ON table1.common_field = table2.common_field;
+[where table2.column2 is null]
+-------
+
+String[] arr = {"a", "b", "c"};
+arr.length -> 3 // this is length attribute in array
+
+String s = "abcd";
+s.legnth() -> 4 // this is methoda call in string class

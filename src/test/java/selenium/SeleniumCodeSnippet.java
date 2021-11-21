@@ -53,6 +53,8 @@ public class SeleniumCodeSnippet {
     private static void setScreenSizeUsingDimensions(WebDriver driver) {
         driver.get("https://www.flipkart.com/");
         Dimension dimension = new Dimension(400, 500);
+
+        //Resize the current window to the given dimension
         driver.manage().window().setSize(dimension);
 
         dimension = driver.manage().window().getSize();

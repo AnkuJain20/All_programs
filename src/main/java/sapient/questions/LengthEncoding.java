@@ -2,7 +2,7 @@ package sapient.questions;
 
 public class LengthEncoding {
     public static void main(String[] args) {
-        String input = "aaAbbbccccc";
+        String input = "aaabbc";
         String encoded = lengthEncoding(input);
         System.out.println("Encoded string is " + encoded);
     }

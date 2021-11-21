@@ -14,8 +14,10 @@ import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
 
 public class AuthenticatedApiTests extends BaseTestClass {
 
@@ -76,6 +78,25 @@ public class AuthenticatedApiTests extends BaseTestClass {
          given().spec(requestSpecification).body(requestObject)
                 .when().post(Constants.SIGNIN_API_PATH)
                 .then().statusCode(200).extract().as(String.class);
+
+       //String response
+        given().spec(requestSpecification).body(requestObject).accept("text/plain")
+                .when().post(Constants.SIGNIN_API_PATH)
+                .then().statusCode(200).body(equalTo("Created"));
+
+        given().spec(requestSpecification).body(requestObject)
+                .when().post(Constants.SIGNIN_API_PATH)
+                .then().statusCode(200).body("arr[0]", equalTo("1"));
+
+        given().spec(requestSpecification).body(requestObject)
+                .when().post(Constants.SIGNIN_API_PATH)
+                .then().statusCode(200)
+                .body("size()", is(5));
+
+
+        //body("fieldName[0]", equalTo("TextName");  -- from JsonResponse array
+
+
 
     }
 
