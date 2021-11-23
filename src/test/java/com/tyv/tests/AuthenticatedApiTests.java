@@ -30,7 +30,7 @@ public class AuthenticatedApiTests extends BaseTestClass {
 
         RequestSpecification requestSpecification = getRequestSpecification();
 
-        System.out.println("IN efore test");
+        System.out.println("IN Before test");
 
         //POST SignIn: SingIN data, API call signIn, response, token
         SignInRequest signInRequest = new SignInRequest();

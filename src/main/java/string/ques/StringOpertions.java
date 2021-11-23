@@ -8,6 +8,15 @@ public class StringOpertions {
         StringBuffer buffer = new StringBuffer(str);
         String reverseString = buffer.reverse().toString();
         System.out.println("Reversed string is: " + reverseString);
+
+
+
+            char ch[]=str.toCharArray();
+            String rev="";
+            for(int i=ch.length-1;i>=0;i--){
+                rev+=ch[i];
+
+        }
     }
 
     public static void palindromeString(String str){
@@ -54,8 +63,7 @@ public class StringOpertions {
         System.out.println("name1.equalsIgnoreCase(name2) :: " +name1.equalsIgnoreCase(name2) );
 
         String name3 = "Anku";
-
-       StringOpertions name4 = new StringOpertions("Anku");
+        String name4 = new String("Anku");
         System.out.println("name2==name3 :: " + (name2 == name3));
         System.out.println("name3==name4 :: " + (name4.equals(name3)));
 
@@ -66,9 +74,12 @@ public class StringOpertions {
     private static void stringMutable(){
 
         String str = "hello"; // str is pointing to hello in string pool
+        str.concat("world");
+        System.out.println(" after concatinating"+ str);
         str = str.concat( "world");  // hello world will be new string in pool and hello will remain as it's
 
-        System.out.println(str);
+
+        System.out.println("Mutable string is " +str);
 
 
     }

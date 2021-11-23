@@ -12,6 +12,7 @@ public class ListOperations {
 
     public static void printListElement(List<String> arrayList){
         System.out.println("\nPrinting arrayList elements: ");
+        arrayList.size();
         for(String str: arrayList){
             System.out.print( str + " ");
         }
