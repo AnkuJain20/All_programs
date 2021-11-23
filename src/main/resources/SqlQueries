@@ -1,3 +1,16 @@
+
+Max salary from each dept
+Select Department, (Max)salary from Employee GroupBY Department;
+
+Select Top1 Salary as 3rd highest salary from(Select distinct top 3 salary from employee order by salary desc)order by salary asc;----( select nth highest salary)
+
+To fetch company name of the employee who is getting highest salary:
+
+Select company name from employee full join company on employee.emp_id= cmpany.emp_id where emp.salary IN( select max(salary) from employee where gender= female)
+
+
+
+
 ------------
 SELECT EMP_ID, [DISTINCT] NAME...
 FROM EMPLOYEE_TBL
